@@ -1,0 +1,134 @@
+.container {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.headerLeft {
+  display: grid;
+  gap: 6px;
+}
+
+.title {
+  font-size: 28px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.subtitle {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sortLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.sortSelect {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  &:focus {
+    border-color: #f78f3f;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(247, 143, 63, 0.25);
+  }
+}
+
+.loading {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.skeletonRow {
+  height: 120px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #eee 25%, #f6f6f6 37%, #eee 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.error {
+  margin-top: 16px;
+  padding: 16px;
+  border: 1px solid #f3c2b8;
+  background: #fff4f1;
+  color: #a12d1f;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.retryBtn {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid #f78f3f;
+  background: #f78f3f;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.06s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    opacity: 0.95;
+  }
+  &:active {
+    transform: translateY(1px);
+  }
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(247, 143, 63, 0.35);
+  }
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(247, 143, 63, 0.5);
+  }
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+}
+
+.empty {
+  margin-top: 16px;
+  padding: 24px;
+  border-radius: 12px;
+  background: #fafafa;
+  border: 1px dashed #ddd;
+  color: #444;
+  text-align: center;
+}

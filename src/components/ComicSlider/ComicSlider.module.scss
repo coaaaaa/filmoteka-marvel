@@ -1,0 +1,76 @@
+.slider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 0;
+
+  .comics {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    overflow: visible;
+    width: 100%;
+    padding-top: 20px;
+  }
+
+  .arrowButton {
+    background-color: #e23636;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+
+    &:hover {
+      background-color: #f78f3f;
+      transform: scale(1.1);
+    }
+
+    &:disabled {
+      background-color: #504a4a;
+      cursor: not-allowed;
+    }
+
+    &.prev {
+      margin-right: 10px;
+    }
+
+    &.next {
+      margin-left: 10px;
+    }
+  }
+
+  .comicItem {
+    text-align: center;
+    padding: 10px;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    width: 100%;
+    height: auto;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+    }
+
+    .image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-top: 10px;
+      text-decoration: none;
+      color: #fff;
+      text-align: center;
+    }
+  }
+}

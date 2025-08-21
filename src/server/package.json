@@ -1,0 +1,17 @@
+{
+  "name": "marvel-proxy",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "axios": "^1.7.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.0",
+    "express": "^4.19.0",
+    "md5": "^2.3.0",
+    "node": "^22.18.0",
+    "server.js": "^1.0.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}
