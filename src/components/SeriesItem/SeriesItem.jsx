@@ -7,10 +7,8 @@ function buildImg(series) {
   const ext = thumbnail?.extension || "jpg";
 
   const isNA = path.includes("image_not_available") || !path;
-
   const srcBase = isNA ? "/placeholder-portrait" : `${path}`;
   const src = isNA ? `${srcBase}.png` : `${srcBase}/standard_fantastic.${ext}`;
-
   const srcSet = isNA
     ? undefined
     : [
@@ -30,27 +28,30 @@ function buildImg(series) {
 
 const SeriesItem = ({ series }) => {
   const img = buildImg(series);
-
   return (
-    <div className={styles.item}>
-      <img
-        src={img.src}
-        srcSet={img.srcSet}
-        sizes={img.sizes}
-        alt={img.alt}
-        width={img.width}
-        height={img.height}
-        loading="lazy"
-        decoding="async"
-        className={styles.image}
-      />
-      <div className={styles.title}>{series.title}</div>
-      <div className={styles.overlay}>
-        <Link to={`/series/${series.id}`}>
-          <button className={styles.detailsButton}>Pogledaj detaljno</button>
-        </Link>
-      </div>
-    </div>
+    <article className={styles.item}>
+      <Link
+        to={`/series/${series.id}`}
+        className={styles.linkArea}
+        aria-label={`Otvori detalje za ${series.title}`}
+      >
+        <img
+          src={img.src}
+          srcSet={img.srcSet}
+          sizes={img.sizes}
+          alt={img.alt}
+          width={img.width}
+          height={img.height}
+          loading="lazy"
+          decoding="async"
+          className={styles.image}
+        />
+        <h3 className={styles.title}>{series.title}</h3>
+        <span className={styles.detailsButton} role="button" aria-hidden="true">
+          Pogledaj detaljno
+        </span>
+      </Link>
+    </article>
   );
 };
 
